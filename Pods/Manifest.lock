@@ -17,11 +17,19 @@ PODS:
   - DTFoundation/UIKit (1.7.16):
     - DTFoundation/Core
   - Hero (1.5.0)
+  - RxCocoa (6.0.0):
+    - RxRelay (= 6.0.0)
+    - RxSwift (= 6.0.0)
+  - RxRelay (6.0.0):
+    - RxSwift (= 6.0.0)
+  - RxSwift (6.0.0)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - DTCoreText (~> 1.6.25)
   - Hero (~> 1.5.0)
+  - RxCocoa (~> 6.0.0)
+  - RxSwift (~> 6.0.0)
   - SnapKit (~> 5.0.1)
 
 SPEC REPOS:
@@ -29,14 +37,20 @@ SPEC REPOS:
     - DTCoreText
     - DTFoundation
     - Hero
+    - RxCocoa
+    - RxRelay
+    - RxSwift
     - SnapKit
 
 SPEC CHECKSUMS:
   DTCoreText: e92f4cf6b36d9d71ce4436d12cf089d74ab0596b
   DTFoundation: e7781d9fd2f202bfd451fbbf8cab71ce83b46498
   Hero: b7385b75e7259da62f4f85462f59a5082d66b058
+  RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
+  RxRelay: 8d593be109c06ea850df027351beba614b012ffb
+  RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: af44547b57704d885fb2863e65320dac868cb133
+PODFILE CHECKSUM: dee36801110a29b10fc0ebcc77fc2064ba05e2ee
 
 COCOAPODS: 1.10.1

@@ -3,11 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		BA87737142DB40A6C89D3EB4 /* Pods_BroswerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBCCF41D21A9CDFBA84F0B63 /* Pods_BroswerKit.framework */; };
+		C730072525BBF59300D36726 /* BKPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C730072425BBF59300D36726 /* BKPageViewController.swift */; };
+		C730072825BBF59F00D36726 /* BKTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C730072725BBF59F00D36726 /* BKTextViewController.swift */; };
+		C730072B25BBF5B400D36726 /* BKEpubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C730072A25BBF5B400D36726 /* BKEpubViewController.swift */; };
+		C730072E25BBF5C400D36726 /* BKMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C730072D25BBF5C400D36726 /* BKMenuViewController.swift */; };
+		C730073125BBF5DA00D36726 /* BKContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C730073025BBF5DA00D36726 /* BKContentViewController.swift */; };
 		C77492BD25BBEAF500068A2A /* BroswerKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C77492BB25BBEAF500068A2A /* BroswerKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C77492D525BBEC4100068A2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77492D425BBEC4100068A2A /* AppDelegate.swift */; };
 		C77492D725BBEC4100068A2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77492D625BBEC4100068A2A /* SceneDelegate.swift */; };
@@ -17,6 +22,15 @@
 		C77492E125BBEC4100068A2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77492DF25BBEC4100068A2A /* LaunchScreen.storyboard */; };
 		C77492E825BBEC5A00068A2A /* BroswerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77492B825BBEAF500068A2A /* BroswerKit.framework */; };
 		C77492E925BBEC5A00068A2A /* BroswerKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C77492B825BBEAF500068A2A /* BroswerKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C77492FE25BBEE0100068A2A /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77492FD25BBEE0100068A2A /* Database.swift */; };
+		C788A59D25BBF7DE00767B4A /* Compatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788A59C25BBF7DE00767B4A /* Compatible.swift */; };
+		C788A5AC25BC028600767B4A /* BKMenuTitleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788A5AB25BC028600767B4A /* BKMenuTitleBar.swift */; };
+		C788A5AF25BC047D00767B4A /* BKMenuToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788A5AE25BC047D00767B4A /* BKMenuToolBar.swift */; };
+		C788A5B225BC0ABD00767B4A /* BrowserKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C788A5B125BC0ABD00767B4A /* BrowserKit.xcassets */; };
+		C788A5BD25BC133300767B4A /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788A5BC25BC133300767B4A /* UIBarButtonItem+Extensions.swift */; };
+		C788A5C425BC1A1F00767B4A /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788A5C325BC1A1F00767B4A /* Bundle+Extensions.swift */; };
+		C788A5C725BC1A9C00767B4A /* UImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788A5C625BC1A9C00767B4A /* UImage+Extensions.swift */; };
+		C788A5CA25BC246800767B4A /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788A5C925BC246800767B4A /* UIColor+Extensions.swift */; };
 		D2663FE54FACEE49B39ED041 /* Pods_BrowserKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A777DCF25E41B1C255BCB8 /* Pods_BrowserKitDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +64,11 @@
 		4928BB4303403050D8F6D7A2 /* Pods-BroswerKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroswerKit.debug.xcconfig"; path = "Target Support Files/Pods-BroswerKit/Pods-BroswerKit.debug.xcconfig"; sourceTree = "<group>"; };
 		93A777DCF25E41B1C255BCB8 /* Pods_BrowserKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrowserKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB019D9CD9D23CB3229B85BB /* Pods-BroswerKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroswerKit.release.xcconfig"; path = "Target Support Files/Pods-BroswerKit/Pods-BroswerKit.release.xcconfig"; sourceTree = "<group>"; };
+		C730072425BBF59300D36726 /* BKPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKPageViewController.swift; sourceTree = "<group>"; };
+		C730072725BBF59F00D36726 /* BKTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKTextViewController.swift; sourceTree = "<group>"; };
+		C730072A25BBF5B400D36726 /* BKEpubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKEpubViewController.swift; sourceTree = "<group>"; };
+		C730072D25BBF5C400D36726 /* BKMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKMenuViewController.swift; sourceTree = "<group>"; };
+		C730073025BBF5DA00D36726 /* BKContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKContentViewController.swift; sourceTree = "<group>"; };
 		C77492B825BBEAF500068A2A /* BroswerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BroswerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77492BB25BBEAF500068A2A /* BroswerKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BroswerKit.h; sourceTree = "<group>"; };
 		C77492BC25BBEAF500068A2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +80,15 @@
 		C77492DD25BBEC4100068A2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C77492E025BBEC4100068A2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C77492E225BBEC4100068A2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C77492FD25BBEE0100068A2A /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		C788A59C25BBF7DE00767B4A /* Compatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compatible.swift; sourceTree = "<group>"; };
+		C788A5AB25BC028600767B4A /* BKMenuTitleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKMenuTitleBar.swift; sourceTree = "<group>"; };
+		C788A5AE25BC047D00767B4A /* BKMenuToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKMenuToolBar.swift; sourceTree = "<group>"; };
+		C788A5B125BC0ABD00767B4A /* BrowserKit.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = BrowserKit.xcassets; sourceTree = "<group>"; };
+		C788A5BC25BC133300767B4A /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
+		C788A5C325BC1A1F00767B4A /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
+		C788A5C625BC1A9C00767B4A /* UImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UImage+Extensions.swift"; sourceTree = "<group>"; };
+		C788A5C925BC246800767B4A /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		EBCCF41D21A9CDFBA84F0B63 /* Pods_BroswerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BroswerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,6 +133,34 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C730071C25BBF54A00D36726 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C730073325BBF5E200D36726 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C730072425BBF59300D36726 /* BKPageViewController.swift */,
+				C730072725BBF59F00D36726 /* BKTextViewController.swift */,
+				C730072A25BBF5B400D36726 /* BKEpubViewController.swift */,
+				C730072D25BBF5C400D36726 /* BKMenuViewController.swift */,
+				C730073025BBF5DA00D36726 /* BKContentViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C730073425BBF5EB00D36726 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C788A5AB25BC028600767B4A /* BKMenuTitleBar.swift */,
+				C788A5AE25BC047D00767B4A /* BKMenuToolBar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C77492AE25BBEAF500068A2A = {
 			isa = PBXGroup;
 			children = (
@@ -128,7 +184,10 @@
 		C77492BA25BBEAF500068A2A /* BroswerKit */ = {
 			isa = PBXGroup;
 			children = (
+				C77492F725BBED9E00068A2A /* Utils */,
+				C77492F825BBEDAA00068A2A /* Class */,
 				C77492BB25BBEAF500068A2A /* BroswerKit.h */,
+				C788A5B125BC0ABD00767B4A /* BrowserKit.xcassets */,
 				C77492BC25BBEAF500068A2A /* Info.plist */,
 			);
 			path = BroswerKit;
@@ -146,6 +205,77 @@
 				C77492E225BBEC4100068A2A /* Info.plist */,
 			);
 			path = BrowserKitDemo;
+			sourceTree = "<group>";
+		};
+		C77492F725BBED9E00068A2A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C788A5B625BC12E900767B4A /* Extensions */,
+				C788A59B25BBF7B100767B4A /* Others */,
+				C77492FC25BBEDED00068A2A /* Database */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C77492F825BBEDAA00068A2A /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				C77492F925BBEDB500068A2A /* eBook */,
+				C77492FA25BBEDC800068A2A /* PDF */,
+				C77492FB25BBEDCE00068A2A /* QuickLook */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		C77492F925BBEDB500068A2A /* eBook */ = {
+			isa = PBXGroup;
+			children = (
+				C730073425BBF5EB00D36726 /* View */,
+				C730073325BBF5E200D36726 /* Controller */,
+			);
+			path = eBook;
+			sourceTree = "<group>";
+		};
+		C77492FA25BBEDC800068A2A /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PDF;
+			sourceTree = "<group>";
+		};
+		C77492FB25BBEDCE00068A2A /* QuickLook */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = QuickLook;
+			sourceTree = "<group>";
+		};
+		C77492FC25BBEDED00068A2A /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				C77492FD25BBEE0100068A2A /* Database.swift */,
+				C730071C25BBF54A00D36726 /* Model */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		C788A59B25BBF7B100767B4A /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				C788A59C25BBF7DE00767B4A /* Compatible.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		C788A5B625BC12E900767B4A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C788A5BC25BC133300767B4A /* UIBarButtonItem+Extensions.swift */,
+				C788A5C325BC1A1F00767B4A /* Bundle+Extensions.swift */,
+				C788A5C625BC1A9C00767B4A /* UImage+Extensions.swift */,
+				C788A5C925BC246800767B4A /* UIColor+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +343,7 @@
 				TargetAttributes = {
 					C77492B725BBEAF500068A2A = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 					C77492D125BBEC4100068A2A = {
 						CreatedOnToolsVersion = 12.3;
@@ -243,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C788A5B225BC0ABD00767B4A /* BrowserKit.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +459,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C788A5AC25BC028600767B4A /* BKMenuTitleBar.swift in Sources */,
+				C788A5C725BC1A9C00767B4A /* UImage+Extensions.swift in Sources */,
+				C730072525BBF59300D36726 /* BKPageViewController.swift in Sources */,
+				C788A5CA25BC246800767B4A /* UIColor+Extensions.swift in Sources */,
+				C788A5C425BC1A1F00767B4A /* Bundle+Extensions.swift in Sources */,
+				C730072B25BBF5B400D36726 /* BKEpubViewController.swift in Sources */,
+				C730072825BBF59F00D36726 /* BKTextViewController.swift in Sources */,
+				C77492FE25BBEE0100068A2A /* Database.swift in Sources */,
+				C730072E25BBF5C400D36726 /* BKMenuViewController.swift in Sources */,
+				C730073125BBF5DA00D36726 /* BKContentViewController.swift in Sources */,
+				C788A5AF25BC047D00767B4A /* BKMenuToolBar.swift in Sources */,
+				C788A5BD25BC133300767B4A /* UIBarButtonItem+Extensions.swift in Sources */,
+				C788A59D25BBF7DE00767B4A /* Compatible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +641,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4928BB4303403050D8F6D7A2 /* Pods-BroswerKit.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = S8J5HAH3SU;
@@ -513,6 +659,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.sina.tramp.BroswerKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -522,6 +669,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AB019D9CD9D23CB3229B85BB /* Pods-BroswerKit.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = S8J5HAH3SU;
@@ -548,6 +696,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 42DE891672C740CC496E2875 /* Pods-BrowserKitDemo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -569,6 +718,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A5FC8E5706940560FB16B69 /* Pods-BrowserKitDemo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
