@@ -1,6 +1,6 @@
 //
 //  BKEpubViewController.swift
-//  BroswerKit
+//  BrowserKit
 //
 //  Created by tramp on 2021/1/23.
 //

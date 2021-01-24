@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_BroswerKitVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_BroswerKitVersionString[];
+FOUNDATION_EXPORT double Pods_BrowserKitVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_BrowserKitVersionString[];
 

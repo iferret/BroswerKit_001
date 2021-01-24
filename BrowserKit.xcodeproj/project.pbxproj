@@ -20,8 +20,8 @@
 		C77492DC25BBEC4100068A2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77492DA25BBEC4100068A2A /* Main.storyboard */; };
 		C77492DE25BBEC4100068A2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C77492DD25BBEC4100068A2A /* Assets.xcassets */; };
 		C77492E125BBEC4100068A2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77492DF25BBEC4100068A2A /* LaunchScreen.storyboard */; };
-		C77492E825BBEC5A00068A2A /* BroswerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77492B825BBEAF500068A2A /* BroswerKit.framework */; };
-		C77492E925BBEC5A00068A2A /* BroswerKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C77492B825BBEAF500068A2A /* BroswerKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C77492E825BBEC5A00068A2A /* BrowserKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77492B825BBEAF500068A2A /* BrowserKit.framework */; };
+		C77492E925BBEC5A00068A2A /* BrowserKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C77492B825BBEAF500068A2A /* BrowserKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C77492FE25BBEE0100068A2A /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77492FD25BBEE0100068A2A /* Database.swift */; };
 		C788A59D25BBF7DE00767B4A /* Compatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788A59C25BBF7DE00767B4A /* Compatible.swift */; };
 		C788A5AC25BC028600767B4A /* BKMenuTitleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788A5AB25BC028600767B4A /* BKMenuTitleBar.swift */; };
@@ -31,6 +31,14 @@
 		C788A5C425BC1A1F00767B4A /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788A5C325BC1A1F00767B4A /* Bundle+Extensions.swift */; };
 		C788A5C725BC1A9C00767B4A /* UImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788A5C625BC1A9C00767B4A /* UImage+Extensions.swift */; };
 		C788A5CA25BC246800767B4A /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788A5C925BC246800767B4A /* UIColor+Extensions.swift */; };
+		C7EDE82425BD342100FB36FA /* BrowserKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C7EDE82225BD342100FB36FA /* BrowserKit.xcdatamodeld */; };
+		C7EDE83A25BD3B9E00FB36FA /* Chapter+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EDE83425BD3B9E00FB36FA /* Chapter+CoreDataClass.swift */; };
+		C7EDE83B25BD3B9E00FB36FA /* Page+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EDE83525BD3B9E00FB36FA /* Page+CoreDataClass.swift */; };
+		C7EDE83C25BD3B9E00FB36FA /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EDE83625BD3B9E00FB36FA /* Book+CoreDataClass.swift */; };
+		C7EDE83D25BD3B9E00FB36FA /* Chapter+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EDE83725BD3B9E00FB36FA /* Chapter+CoreDataProperties.swift */; };
+		C7EDE83E25BD3B9E00FB36FA /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EDE83825BD3B9E00FB36FA /* Book+CoreDataProperties.swift */; };
+		C7EDE83F25BD3B9E00FB36FA /* Page+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EDE83925BD3B9E00FB36FA /* Page+CoreDataProperties.swift */; };
+		C7EDE84225BD3FAE00FB36FA /* BKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EDE84125BD3FAE00FB36FA /* BKError.swift */; };
 		D2663FE54FACEE49B39ED041 /* Pods_BrowserKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A777DCF25E41B1C255BCB8 /* Pods_BrowserKitDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +59,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C77492E925BBEC5A00068A2A /* BroswerKit.framework in Embed Frameworks */,
+				C77492E925BBEC5A00068A2A /* BrowserKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,7 +77,7 @@
 		C730072A25BBF5B400D36726 /* BKEpubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKEpubViewController.swift; sourceTree = "<group>"; };
 		C730072D25BBF5C400D36726 /* BKMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKMenuViewController.swift; sourceTree = "<group>"; };
 		C730073025BBF5DA00D36726 /* BKContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKContentViewController.swift; sourceTree = "<group>"; };
-		C77492B825BBEAF500068A2A /* BroswerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BroswerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C77492B825BBEAF500068A2A /* BrowserKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BrowserKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77492BB25BBEAF500068A2A /* BroswerKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BroswerKit.h; sourceTree = "<group>"; };
 		C77492BC25BBEAF500068A2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C77492D225BBEC4100068A2A /* BrowserKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrowserKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +97,14 @@
 		C788A5C325BC1A1F00767B4A /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		C788A5C625BC1A9C00767B4A /* UImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UImage+Extensions.swift"; sourceTree = "<group>"; };
 		C788A5C925BC246800767B4A /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		C7EDE82325BD342100FB36FA /* BrowserKit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BrowserKit.xcdatamodel; sourceTree = "<group>"; };
+		C7EDE83425BD3B9E00FB36FA /* Chapter+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Chapter+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C7EDE83525BD3B9E00FB36FA /* Page+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Page+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C7EDE83625BD3B9E00FB36FA /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C7EDE83725BD3B9E00FB36FA /* Chapter+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Chapter+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C7EDE83825BD3B9E00FB36FA /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C7EDE83925BD3B9E00FB36FA /* Page+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Page+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C7EDE84125BD3FAE00FB36FA /* BKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKError.swift; sourceTree = "<group>"; };
 		EBCCF41D21A9CDFBA84F0B63 /* Pods_BroswerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BroswerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,7 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C77492E825BBEC5A00068A2A /* BroswerKit.framework in Frameworks */,
+				C77492E825BBEC5A00068A2A /* BrowserKit.framework in Frameworks */,
 				D2663FE54FACEE49B39ED041 /* Pods_BrowserKitDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +152,12 @@
 		C730071C25BBF54A00D36726 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C7EDE83625BD3B9E00FB36FA /* Book+CoreDataClass.swift */,
+				C7EDE83825BD3B9E00FB36FA /* Book+CoreDataProperties.swift */,
+				C7EDE83425BD3B9E00FB36FA /* Chapter+CoreDataClass.swift */,
+				C7EDE83725BD3B9E00FB36FA /* Chapter+CoreDataProperties.swift */,
+				C7EDE83525BD3B9E00FB36FA /* Page+CoreDataClass.swift */,
+				C7EDE83925BD3B9E00FB36FA /* Page+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,7 +186,7 @@
 		C77492AE25BBEAF500068A2A = {
 			isa = PBXGroup;
 			children = (
-				C77492BA25BBEAF500068A2A /* BroswerKit */,
+				C77492BA25BBEAF500068A2A /* BrowserKit */,
 				C77492D325BBEC4100068A2A /* BrowserKitDemo */,
 				C77492B925BBEAF500068A2A /* Products */,
 				C4E83962CD1A2D88B60247C4 /* Pods */,
@@ -175,13 +197,13 @@
 		C77492B925BBEAF500068A2A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C77492B825BBEAF500068A2A /* BroswerKit.framework */,
+				C77492B825BBEAF500068A2A /* BrowserKit.framework */,
 				C77492D225BBEC4100068A2A /* BrowserKitDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C77492BA25BBEAF500068A2A /* BroswerKit */ = {
+		C77492BA25BBEAF500068A2A /* BrowserKit */ = {
 			isa = PBXGroup;
 			children = (
 				C77492F725BBED9E00068A2A /* Utils */,
@@ -190,7 +212,7 @@
 				C788A5B125BC0ABD00767B4A /* BrowserKit.xcassets */,
 				C77492BC25BBEAF500068A2A /* Info.plist */,
 			);
-			path = BroswerKit;
+			path = BrowserKit;
 			sourceTree = "<group>";
 		};
 		C77492D325BBEC4100068A2A /* BrowserKitDemo */ = {
@@ -254,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				C77492FD25BBEE0100068A2A /* Database.swift */,
+				C7EDE82225BD342100FB36FA /* BrowserKit.xcdatamodeld */,
 				C730071C25BBF54A00D36726 /* Model */,
 			);
 			path = Database;
@@ -263,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				C788A59C25BBF7DE00767B4A /* Compatible.swift */,
+				C7EDE84125BD3FAE00FB36FA /* BKError.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -292,9 +316,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		C77492B725BBEAF500068A2A /* BroswerKit */ = {
+		C77492B725BBEAF500068A2A /* BrowserKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C77492C025BBEAF500068A2A /* Build configuration list for PBXNativeTarget "BroswerKit" */;
+			buildConfigurationList = C77492C025BBEAF500068A2A /* Build configuration list for PBXNativeTarget "BrowserKit" */;
 			buildPhases = (
 				9A8C7A4A1E0B2979F8D1960B /* [CP] Check Pods Manifest.lock */,
 				C77492B325BBEAF500068A2A /* Headers */,
@@ -306,9 +330,9 @@
 			);
 			dependencies = (
 			);
-			name = BroswerKit;
+			name = BrowserKit;
 			productName = BroswerKit;
-			productReference = C77492B825BBEAF500068A2A /* BroswerKit.framework */;
+			productReference = C77492B825BBEAF500068A2A /* BrowserKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C77492D125BBEC4100068A2A /* BrowserKitDemo */ = {
@@ -350,7 +374,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C77492B225BBEAF500068A2A /* Build configuration list for PBXProject "BroswerKit" */;
+			buildConfigurationList = C77492B225BBEAF500068A2A /* Build configuration list for PBXProject "BrowserKit" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -363,7 +387,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C77492B725BBEAF500068A2A /* BroswerKit */,
+				C77492B725BBEAF500068A2A /* BrowserKit */,
 				C77492D125BBEC4100068A2A /* BrowserKitDemo */,
 			);
 		};
@@ -463,14 +487,22 @@
 				C788A5C725BC1A9C00767B4A /* UImage+Extensions.swift in Sources */,
 				C730072525BBF59300D36726 /* BKPageViewController.swift in Sources */,
 				C788A5CA25BC246800767B4A /* UIColor+Extensions.swift in Sources */,
+				C7EDE83B25BD3B9E00FB36FA /* Page+CoreDataClass.swift in Sources */,
 				C788A5C425BC1A1F00767B4A /* Bundle+Extensions.swift in Sources */,
+				C7EDE82425BD342100FB36FA /* BrowserKit.xcdatamodeld in Sources */,
+				C7EDE83C25BD3B9E00FB36FA /* Book+CoreDataClass.swift in Sources */,
 				C730072B25BBF5B400D36726 /* BKEpubViewController.swift in Sources */,
 				C730072825BBF59F00D36726 /* BKTextViewController.swift in Sources */,
+				C7EDE83E25BD3B9E00FB36FA /* Book+CoreDataProperties.swift in Sources */,
 				C77492FE25BBEE0100068A2A /* Database.swift in Sources */,
+				C7EDE83A25BD3B9E00FB36FA /* Chapter+CoreDataClass.swift in Sources */,
 				C730072E25BBF5C400D36726 /* BKMenuViewController.swift in Sources */,
 				C730073125BBF5DA00D36726 /* BKContentViewController.swift in Sources */,
+				C7EDE84225BD3FAE00FB36FA /* BKError.swift in Sources */,
 				C788A5AF25BC047D00767B4A /* BKMenuToolBar.swift in Sources */,
+				C7EDE83F25BD3B9E00FB36FA /* Page+CoreDataProperties.swift in Sources */,
 				C788A5BD25BC133300767B4A /* UIBarButtonItem+Extensions.swift in Sources */,
+				C7EDE83D25BD3B9E00FB36FA /* Chapter+CoreDataProperties.swift in Sources */,
 				C788A59D25BBF7DE00767B4A /* Compatible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,7 +522,7 @@
 /* Begin PBXTargetDependency section */
 		C77492EB25BBEC5A00068A2A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C77492B725BBEAF500068A2A /* BroswerKit */;
+			target = C77492B725BBEAF500068A2A /* BrowserKit */;
 			targetProxy = C77492EA25BBEC5A00068A2A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -648,7 +680,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = BroswerKit/Info.plist;
+				INFOPLIST_FILE = BrowserKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -656,7 +688,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.sina.tramp.BroswerKit;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.sina.tramp.BrowserKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -676,7 +708,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = BroswerKit/Info.plist;
+				INFOPLIST_FILE = BrowserKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -684,7 +716,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.sina.tramp.BroswerKit;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.sina.tramp.BrowserKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -739,7 +771,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C77492B225BBEAF500068A2A /* Build configuration list for PBXProject "BroswerKit" */ = {
+		C77492B225BBEAF500068A2A /* Build configuration list for PBXProject "BrowserKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C77492BE25BBEAF500068A2A /* Debug */,
@@ -748,7 +780,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C77492C025BBEAF500068A2A /* Build configuration list for PBXNativeTarget "BroswerKit" */ = {
+		C77492C025BBEAF500068A2A /* Build configuration list for PBXNativeTarget "BrowserKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C77492C125BBEAF500068A2A /* Debug */,
@@ -767,6 +799,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C7EDE82225BD342100FB36FA /* BrowserKit.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C7EDE82325BD342100FB36FA /* BrowserKit.xcdatamodel */,
+			);
+			currentVersion = C7EDE82325BD342100FB36FA /* BrowserKit.xcdatamodel */;
+			path = BrowserKit.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C77492AF25BBEAF500068A2A /* Project object */;
 }

@@ -1,6 +1,6 @@
 //
 //  BKTextViewController.swift
-//  BroswerKit
+//  BrowserKit
 //
 //  Created by tramp on 2021/1/23.
 //
@@ -59,6 +59,13 @@ public class BKTextViewController: UIViewController {
         initialize()
         
         pageController.setViewControllers([BKContentViewController.init()], direction: .forward, animated: false)
+        
+        do {
+            let db = try Database.current()
+            print(db)
+        } catch {
+            print(error)
+        }
     }
     
 }

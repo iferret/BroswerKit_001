@@ -1,6 +1,6 @@
 //
 //  BKMenuViewController.swift
-//  BroswerKit
+//  BrowserKit
 //
 //  Created by tramp on 2021/1/23.
 //
@@ -117,7 +117,7 @@ extension BKMenuViewController {
         view.addSubview(toolBar)
         toolBar.snp.makeConstraints {
             $0.left.right.bottom.equalToSuperview()
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-140.0)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-100.0)
         }
     }
     

@@ -6,11 +6,11 @@ platform :ios, '11.0'
 inhibit_all_warnings!
 
 
-target 'BroswerKit' do
+target 'BrowserKit' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   
-  # Pods for BroswerKit
+  # Pods for BrowserKit
   pod 'SnapKit', '~> 5.0.1'
   pod 'DTCoreText', '~> 1.6.25'
   pod 'Hero', '~> 1.5.0'

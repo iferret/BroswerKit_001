@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import RxCocoa
 import RxSwift
-import BroswerKit
+import BrowserKit
 
 class ViewController: UIViewController {
     
