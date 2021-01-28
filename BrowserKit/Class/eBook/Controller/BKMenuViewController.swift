@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-/// BKMenuViewControllerDelegate
+// MARK: - BKMenuViewControllerDelegate
 protocol BKMenuViewControllerDelegate: NSObjectProtocol {
     
     /// closeActionHandle
@@ -22,9 +22,15 @@ protocol BKMenuViewControllerDelegate: NSObjectProtocol {
     ///   - menuViewController: BKMenuViewController
     ///   - sender: UIBarButtonItem
     func menuViewController(_ menuViewController: BKMenuViewController, tagActionHandle sender: UIBarButtonItem)
+    
+    /// themeActionHandle
+    /// - Parameters:
+    ///   - menuViewController: BKMenuViewController
+    ///   - sender: BKTheme
+    func menuViewController(_ menuViewController: BKMenuViewController, themeActionHandle sender: BKTheme)
 }
 
-/// BKMenuViewController
+// MARK: - BKMenuViewController
 class BKMenuViewController: UIViewController {
     
     // MARK: - 公开属性
@@ -56,6 +62,7 @@ class BKMenuViewController: UIViewController {
     private lazy var toolBar: BKMenuToolBar = {
         let _effect = UIBlurEffect.init(style: .dark)
         let _bar = BKMenuToolBar.init(effect: _effect)
+        _bar.delegate = self
         return _bar
     }()
     
@@ -117,7 +124,7 @@ extension BKMenuViewController {
         view.addSubview(toolBar)
         toolBar.snp.makeConstraints {
             $0.left.right.bottom.equalToSuperview()
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-100.0)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-160.0)
         }
     }
     
@@ -179,6 +186,20 @@ extension BKMenuViewController: BKMenuTitleBarDelegate {
     ///   - sender: UIBarButtonItem
     internal func menuTitleBar(_ menuTitleBar: BKMenuTitleBar, tagActionHandle sender: UIBarButtonItem) {
         delegate?.menuViewController(self, tagActionHandle: sender)
+    }
+    
+    
+}
+
+// MARK: - BKMenuToolBarDelegate
+extension BKMenuViewController: BKMenuToolBarDelegate {
+    
+    /// themeChangeHandle
+    /// - Parameters:
+    ///   - menuToolBar: BKMenuToolBar
+    ///   - theme: BKTheme
+    internal func menuToolBar(_ menuToolBar: BKMenuToolBar, themeChangeHandle theme: BKTheme) {
+        delegate?.menuViewController(self, themeActionHandle: theme)
     }
     
     

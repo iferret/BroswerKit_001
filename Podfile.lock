@@ -33,7 +33,7 @@ DEPENDENCIES:
   - SnapKit (~> 5.0.1)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - DTCoreText
     - DTFoundation
     - Hero
@@ -51,6 +51,6 @@ SPEC CHECKSUMS:
   RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: dee36801110a29b10fc0ebcc77fc2064ba05e2ee
+PODFILE CHECKSUM: 942517eaeed055c28226a1ee747d29a605070dd1
 
 COCOAPODS: 1.10.1

@@ -55,6 +55,7 @@ extension UIColor {
         self.init( red: CGFloat(r) / 0xff, green: CGFloat(g) / 0xff, blue: CGFloat(b) / 0xff, alpha: alphaValue)
         
     }
+    
 }
 
 extension UIColor: Compatible {}
@@ -78,4 +79,37 @@ extension CompatibleWrapper where Base: UIColor {
         
         return UIColor.init(hue: _hue, saturation: _saturation, brightness: _brightness, alpha: _alpha)
     }
+    
+    /// UIColor 转 hex 字符串
+    ///
+    /// - Parameter hash: 是否携带 “#”
+    /// - Returns: hex 字符串
+    internal func toHex(hash: Bool = true) -> String {
+        var r: CGFloat = 0
+        var g: CGFloat = 0
+        var b: CGFloat = 0
+        var a: CGFloat = 0
+        // 获取 色值
+        base.getRed(&r, green: &g, blue: &b, alpha: &a)
+        // 构建 hex string
+        var hex = String( format: "%02X%02X%02X",Int(r * 0xff), Int(g * 0xff), Int(b * 0xff))
+        // 添加 hash (#)
+        if hash == true { hex = "#\(hex)" }
+        // 返回
+        return hex
+    }
+
+}
+
+extension UIColor {
+    
+    /// ==
+    /// - Parameters:
+    ///   - lhs: UIColor
+    ///   - rhs: UIColor
+    /// - Returns: Bool
+   internal static func == (lhs: UIColor, rhs: UIColor) -> Bool {
+        return lhs.hub.toHex() == rhs.hub.toHex()
+    }
+    
 }

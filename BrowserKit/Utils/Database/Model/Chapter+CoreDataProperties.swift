@@ -15,11 +15,14 @@ extension Chapter {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Chapter> {
         return NSFetchRequest<Chapter>(entityName: "Chapter")
     }
-
-    @NSManaged public var title: String?
+    
+    @NSManaged public var uniqueID: String
+    @NSManaged public var title: String
+    @NSManaged public var contents: String
     @NSManaged public var sortIndex: Int64
-    @NSManaged public var book: Book?
-    @NSManaged public var contents: NSSet?
+    @NSManaged public var modified: Date
+    @NSManaged public var pages: Set<Page>
+    @NSManaged public var book: Book
 
 }
 
@@ -33,9 +36,9 @@ extension Chapter {
     @NSManaged public func removeFromContents(_ value: Page)
 
     @objc(addContents:)
-    @NSManaged public func addToContents(_ values: NSSet)
+    @NSManaged public func addToContents(_ values: Set<Page>)
 
     @objc(removeContents:)
-    @NSManaged public func removeFromContents(_ values: NSSet)
+    @NSManaged public func removeFromContents(_ values: Set<Page>)
 
 }

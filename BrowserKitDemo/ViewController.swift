@@ -26,8 +26,8 @@ class ViewController: UIViewController {
         _button.backgroundColor = .orange
         _button.layer.cornerRadius = 6.0
         _button.rx.tap.subscribe { [unowned self](_) in
-            let fileUrl = URL.init(string: "https://www.baidu.com")!
-            let controller = BKTextViewController.init(with: fileUrl)
+            guard let fileUrl = Bundle.main.url(forResource: "东野圭吾-恶意", withExtension: "txt")  else { return }
+            let controller = try! BKTextViewController.init(with: fileUrl)
             self.present(controller, animated: true, completion:  nil)
         }.disposed(by: bag)
         return _button

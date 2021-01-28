@@ -37,7 +37,8 @@ class Database {
         let bundle = Bundle.init(for: type(of: self))
         guard let modelUrl = bundle.url(forResource: "BrowserKit", withExtension: "momd"),
               let model = NSManagedObjectModel.init(contentsOf: modelUrl) else { throw BKError.dbInitError }
-        let description: NSPersistentStoreDescription = .init()
+        let storeUrl = try FileManager.default.hub.dir(with: .sqlites).appendingPathComponent("BrowserKit.sqlite", isDirectory: false)
+        let description: NSPersistentStoreDescription = .init(url: storeUrl)
         description.shouldAddStoreAsynchronously = false
         description.shouldMigrateStoreAutomatically = true
         description.shouldInferMappingModelAutomatically = true
@@ -84,5 +85,6 @@ extension Database {
     internal func performBackgroundTask(_ block: @escaping (NSManagedObjectContext) -> Void) {
         container.performBackgroundTask(block)
     }
+    
 }
 

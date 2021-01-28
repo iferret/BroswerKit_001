@@ -33,13 +33,18 @@ public class BKTextViewController: UIViewController {
     
     /// 文件存储位置
     private let fileUrl: URL
+    /// BKConfiguration
+    private let configuration: BKConfiguration
     
     // MARK: - 生命周期
     
     /// 构建
-    /// - Parameter fileUrl: 文件存储位置
-    public init(with fileUrl: URL) {
+    /// - Parameters:
+    ///   - fileUrl: 文件存储位置
+    ///   - configuration: BKConfiguration
+    public init(with fileUrl: URL, configuration: BKConfiguration = .default) {
         self.fileUrl = fileUrl
+        self.configuration = configuration
         super.init(nibName: nil, bundle: nil)
         self.modalTransitionStyle = .crossDissolve
         self.modalPresentationStyle = .fullScreen
@@ -58,13 +63,17 @@ public class BKTextViewController: UIViewController {
         // 初始化
         initialize()
         
-        pageController.setViewControllers([BKContentViewController.init()], direction: .forward, animated: false)
-        
         do {
             let db = try Database.current()
-            print(db)
+            let object = try Book.insert(with: fileUrl, inContext: db.viewContext)
+            try db.viewContext.hub.saveAndWait()
+            
+            guard let page = object.snapshot.contents.first?.pagination(with: view.bounds.size.hub.inset(by:  configuration.safeAreaInsets),
+                                                                      attributes: configuration.attributes)[2]else { return }
+            let controller: BKContentViewController = .init(with: page, configuration: configuration)
+            pageController.setViewControllers([controller], direction: .forward, animated: false)
         } catch {
-            print(error)
+            
         }
     }
     
@@ -76,14 +85,13 @@ extension BKTextViewController {
     /// 初始化
     private func initialize() {
         // coding here ...
-        view.backgroundColor = .cyan
+        view.backgroundColor = configuration.backgroundColor
         view.addGestureRecognizer(tap)
         addChild(pageController)
         
         // 布局
         pageController.view.frame = view.bounds
         view.addSubview(pageController.view)
-        
     }
     
     /// tapGestureHandle
@@ -112,6 +120,21 @@ extension BKTextViewController: BKMenuViewControllerDelegate {
     ///   - sender: UIBarButtonItem
     internal func menuViewController(_ menuViewController: BKMenuViewController, tagActionHandle sender: UIBarButtonItem) {
         print(#function)
+    }
+    
+    /// themeActionHandle
+    /// - Parameters:
+    ///   - menuViewController: BKMenuViewController
+    ///   - sender: BKTheme
+    internal func menuViewController(_ menuViewController: BKMenuViewController, themeActionHandle sender: BKTheme) {
+        guard let cotnrollers = pageController.viewControllers as? [BKContentViewController] else { return }
+        cotnrollers.forEach { (controller) in
+            controller.view.hub.set(backgroundColor: sender.colors.backgroundColor, animated: true)
+            controller.add(attributes: [.foregroundColor: sender.colors.textColor], animated: true)
+        }
+        UserDefaults.current.hub.set(sender.colors.backgroundColor, forKey: .backgroundColor)
+        UserDefaults.current.hub.set(sender.colors.textColor, forKey: .textColor)
+        UserDefaults.current.hub.synchronize()
     }
     
 }
@@ -147,8 +170,7 @@ extension BKTextViewController: BKPageViewControllerDataSource {
     ///   - pageViewController: BKPageViewController
     ///   - viewController: UIViewController
     internal func pageViewController(_ pageViewController: BKPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        print(viewController.view.safeAreaInsets)
-        return BKContentViewController.init()
+        return nil
     }
     
     /// viewControllerAfter
@@ -156,7 +178,7 @@ extension BKTextViewController: BKPageViewControllerDataSource {
     ///   - pageViewController: BKPageViewController
     ///   - viewController: UIViewController
     internal func pageViewController(_ pageViewController: BKPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        return BKContentViewController.init()
+        return nil
     }
     
 }

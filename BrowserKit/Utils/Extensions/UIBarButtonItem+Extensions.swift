@@ -55,5 +55,27 @@ extension CompatibleWrapper where Base: UIBarButtonItem {
     internal var `switch`: UISwitch? {
         return base.customView as? UISwitch
     }
+    
+    /// UIControl
+    internal var control: UIControl? {
+        return base.customView as? UIControl
+    }
 }
 
+extension CompatibleWrapper where Base: UIBarButtonItem {
+    
+    ///  add target and action
+    /// - Parameters:
+    ///   - target: AnyObject
+    ///   - action: Selector
+    /// - Returns: UIBarButtonItem
+    internal func add(target: AnyObject?, action: Selector) -> UIBarButtonItem {
+        if let control = self.control  {
+            control.addTarget(target, action: action, for: .touchUpInside)
+        } else {
+            base.target = target
+            base.action = action
+        }
+        return base
+    }
+}
