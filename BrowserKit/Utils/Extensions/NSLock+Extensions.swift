@@ -10,20 +10,20 @@ import Foundation
 extension NSLock: Compatible {}
 extension CompatibleWrapper where Base: NSLock {
     
-    /// safe lock closure
-    /// - Parameter closure: ()-> Void
-    internal func safeLock(_ closure: ()->Void) {
+    /// safe lock block
+    /// - Parameter block: ()-> Void
+    internal func safeLock(_ block: ()->Void) {
         base.lock()
-        closure()
+        block()
         base.unlock()
     }
     
-    /// safe lock closure
-    /// - Parameter closure: ()->T
+    /// safe lock block
+    /// - Parameter block: ()->T
     /// - Returns: T
-    internal func safeLock<T>(_ closure: ()->T) -> T {
+    internal func safeLock<T>(_ block: ()->T) -> T {
         base.lock()
-        let value = closure()
+        let value = block()
         base.unlock()
         return value
     }

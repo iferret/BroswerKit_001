@@ -80,7 +80,9 @@ extension Database {
     }
     
     /// performBackgroundTask
-    /// - Parameter block: (NSManagedObjectContext) -> Void
+    /// - Parameters:
+    ///   - block: @escaping (NSManagedObjectContext) throws -> Void
+    ///   - completionHandle: ((Error?) -> Void)?
     internal func performBackgroundTask(_ block: @escaping (NSManagedObjectContext) throws -> Void, completionHandle: ((Error?) -> Void)? = nil) {
         container.performBackgroundTask { (context) in
             do {

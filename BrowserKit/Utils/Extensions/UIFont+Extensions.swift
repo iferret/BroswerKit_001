@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 extension UIFont {
+    
+    /// PFWeight
     enum PFWeight: String {
         /// PingFangSC-Medium
         case medium = "PingFangSC-Medium"

@@ -72,7 +72,7 @@ extension Book {
                 }
                 let title = (txt as NSString).substring(with: element.range)
                 let contents = (txt as NSString).substring(with: .init(location: location, length: length))
-                let md5 = contents.hub.md5
+                let md5 = contents.hub.md5()
                 return .init(uniqueID: md5, title: title, text: contents, pages: [], modified: .init(), index: Int64(offset))
             }
         } else { // 按照字数拆分
@@ -90,7 +90,7 @@ extension Book {
                     contents = contents + txt.prefix(result.range.location + result.range.length)
                     txt = String.init(txt.dropFirst(result.range.location + result.range.length))
                 }
-                let md5 = contents.hub.md5
+                let md5 = contents.hub.md5()
                 chapters.append(.init(uniqueID: md5, title: title, text: contents, pages: [], modified: .init(), index: offset))
                 offset += 1
             }

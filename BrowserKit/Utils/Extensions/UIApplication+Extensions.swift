@@ -19,4 +19,5 @@ extension CompatibleWrapper where Base: UIApplication {
             return base.keyWindow
         }
     }
+    
 }

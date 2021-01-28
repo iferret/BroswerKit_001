@@ -30,19 +30,19 @@ internal class UserDefaultsKey: NSObject {
     }
     
     /// safe lock
-    /// - Parameter closure: () -> Void
-    internal func safeLock(_ closure: () -> Void) {
+    /// - Parameter block: () -> Void
+    internal func safeLock(_ block: () -> Void) {
         lock.hub.safeLock {
-            closure()
+            block()
         }
     }
     
     /// safeLock
-    /// - Parameter closure: () -> T
+    /// - Parameter block: () -> T
     /// - Returns: T
-    internal func safeLock<T>(_ closure: () -> T) -> T {
+    internal func safeLock<T>(_ block: () -> T) -> T {
         return lock.hub.safeLock { () -> T in
-            return closure()
+            return block()
         }
     }
 }
@@ -243,7 +243,7 @@ extension CompatibleWrapper where Base: UserDefaults {
      */
     @discardableResult
     internal func synchronize() -> Bool {
-       return base.synchronize()
+        return base.synchronize()
     }
     
     /// objectIsForced

@@ -11,13 +11,13 @@ extension FileManager: Compatible {}
 extension CompatibleWrapper where Base: FileManager {
     /// Dir
     enum Dir {
-        case customize(_ path: String)
+        case customized(_ path: String)
         case sqlites
         
         /// rawValue
         internal var rawValue: String {
             switch self {
-            case .customize(let path): return path
+            case .customized(let path): return path
             case .sqlites: return "sqlites"
             }
         }
@@ -53,7 +53,7 @@ extension CompatibleWrapper where Base: FileManager {
     internal func uniqueID(for fileUrl: URL) throws -> String {
         var isDir: ObjCBool = .init(false)
         guard base.fileExists(atPath: fileUrl.path, isDirectory: &isDir) == true, isDir.boolValue == false else { throw BKError.fileNotfound }
-        return fileUrl.pathComponents.suffix(2).joined(separator: "-").hub.md5
+        return fileUrl.pathComponents.suffix(2).joined(separator: "-").hub.md5()
     }
     
     /// 获取文件编码格式
