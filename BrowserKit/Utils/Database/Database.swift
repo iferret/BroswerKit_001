@@ -10,8 +10,7 @@ import CoreData
 
 /// 数据库管理
 class Database {
-    
-    // MARK: - 公开属性
+      
     
     /// NSPersistentContainer
     internal let container: NSPersistentContainer
