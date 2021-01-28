@@ -48,13 +48,10 @@ internal class UserDefaultsKey: NSObject {
 }
 
 extension UserDefaultsKey {
-    
-    /// background color
-    internal static let backgroundColor: UserDefaultsKey = .init(rawValue: "BrowserKit.UserDefaultKey.backgroundColor")
-    /// text color
-    internal static let textColor: UserDefaultsKey = .init(rawValue: "BrowserKit.UserDefaultKey.textColor")
     /// text font
     internal static let textFont: UserDefaultsKey = .init(rawValue: "BrowserKit.UserDefaultKey.textFont")
+    /// theme
+    internal static let theme: UserDefaultsKey = .init(rawValue: "BrowserKit.UserDefaultKey.theme")
 }
 
 
@@ -277,7 +274,7 @@ extension CompatibleWrapper where Base: UserDefaults {
     /// - Parameters:
     ///   - color: UIColor
     ///   - defaultKey: UserDefaultsKey
-    internal func set(_ color: UIColor?, forKey defaultKey: UserDefaultsKey) {
+    internal func set(color: UIColor?, forKey defaultKey: UserDefaultsKey) {
         defaultKey.safeLock {
             base.set(color?.hub.toHex(), forKey: defaultKey.rawValue)
         }
@@ -297,7 +294,7 @@ extension CompatibleWrapper where Base: UserDefaults {
     /// - Parameters:
     ///   - font: UIFont
     ///   - defaultKey: UserDefaultsKey
-    internal func set(_ font: UIFont?, forKey defaultKey: UserDefaultsKey) {
+    internal func set(font: UIFont?, forKey defaultKey: UserDefaultsKey) {
         let sizeKey = "\(defaultKey.rawValue).sizeKey"
         let nameKey = "\(defaultKey.rawValue).nameKey"
         if let font = font {
@@ -323,6 +320,26 @@ extension CompatibleWrapper where Base: UserDefaults {
             guard let name = base.string(forKey: nameKey) else { return nil }
             let size = base.double(forKey: sizeKey)
             return UIFont.init(name: name, size: CGFloat(size))
+        }
+    }
+    
+    /// set theme
+    /// - Parameters:
+    ///   - theme: BKTheme
+    ///   - defaultKey: UserDefaultsKey
+    internal func set(theme: BKTheme?, defaultKey: UserDefaultsKey) {
+        defaultKey.safeLock {
+            base.set(theme?.rawValue, forKey: defaultKey.rawValue)
+        }
+    }
+    
+    /// theme for key
+    /// - Parameter defaultKey: UserDefaultsKey
+    /// - Returns: BKTheme
+    internal func theme(forKey defaultKey: UserDefaultsKey) -> BKTheme? {
+        return defaultKey.safeLock { () -> BKTheme? in
+            let rawValue = base.integer(forKey: defaultKey.rawValue)
+            return BKTheme.init(rawValue: rawValue)
         }
     }
 }

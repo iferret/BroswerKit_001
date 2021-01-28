@@ -17,6 +17,10 @@ protocol BKMenuToolBarDelegate: NSObjectProtocol {
     ///   - menuToolBar: BKMenuToolBar
     ///   - theme: BKTheme
     func menuToolBar(_ menuToolBar: BKMenuToolBar, themeChangeHandle theme: BKTheme)
+    
+    /// 获取当前主题
+    /// - Parameter menuToolBar: BKMenuToolBar
+    func currentTheme(menuToolBar: BKMenuToolBar) -> BKTheme
 }
 
 /// BKMenuTitleBar
@@ -29,19 +33,17 @@ class BKMenuToolBar: UIVisualEffectView {
     
     // MARK: - 私有属性
     
-    /// backgroundColorBar
-    private lazy var colorBar: UIToolbar = {
+    /// theme bar
+    private lazy var themeBar: UIToolbar = {
         let _bar = UIToolbar.init(frame: .init(x: 0.0, y: 0.0, width: 100.0, height: 44.0))
         _bar.setBackgroundImage(.init(), forToolbarPosition: .any, barMetrics: .default)
         _bar.setShadowImage(.init(), forToolbarPosition: .any)
-        _bar.items = [
-            .flexible(), BKTheme.light.barItem.hub.add(target: self, action: #selector(themeItemActionHandle(_:))),
-            .flexible(), BKTheme.soft.barItem.hub.add(target: self, action: #selector(themeItemActionHandle(_:))),
-            .flexible(), BKTheme.girl.barItem.hub.add(target: self, action: #selector(themeItemActionHandle(_:))),
-            .flexible(), BKTheme.medium.barItem.hub.add(target: self, action: #selector(themeItemActionHandle(_:))),
-            .flexible(), BKTheme.heavy.barItem.hub.add(target: self, action: #selector(themeItemActionHandle(_:))),
-            .flexible()
-        ]
+        var items: [UIBarButtonItem] = [.flexible()]
+        BKTheme.allCases.forEach { (theme) in
+            items.append(theme.barItem.hub.add(target: self, action: #selector(themeItemActionHandle(_:))))
+            items.append(.flexible())
+        }
+        _bar.items = items
         return _bar
     }()
     
@@ -60,6 +62,13 @@ class BKMenuToolBar: UIVisualEffectView {
     internal required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    /// layoutSubviews
+    internal override func layoutSubviews() {
+        super.layoutSubviews()
+        // update ui
+        updateUi()
+    }
 }
 
 // MARK: - 自定义
@@ -71,8 +80,8 @@ extension BKMenuToolBar {
         
         // 布局
         
-        contentView.addSubview(colorBar)
-        colorBar.snp.makeConstraints {
+        contentView.addSubview(themeBar)
+        themeBar.snp.makeConstraints {
             $0.left.right.equalToSuperview()
             $0.height.equalTo(44.0)
             $0.top.equalToSuperview().offset(10.0)
@@ -84,5 +93,24 @@ extension BKMenuToolBar {
     @objc private func themeItemActionHandle(_ sender: UIButton) {
         guard let theme = BKTheme.init(rawValue: sender.tag) else { return }
         delegate?.menuToolBar(self, themeChangeHandle: theme)
+        // 更新Ui
+        DispatchQueue.main.async {
+            self.updateUi()
+        }
+    }
+    
+    /// 更新Ui
+    private func updateUi() {
+        /// update select theme
+        if let theme = delegate?.currentTheme(menuToolBar: self) {
+            themeBar.items?.forEach({ (item) in
+                if item.tag == theme.rawValue {
+                    item.customView?.layer.borderColor = UIColor.red.cgColor
+                } else {
+                    guard item.customView != nil else { return }
+                    item.customView?.layer.borderColor = UIColor.lightText.cgColor
+                }
+            })
+        }
     }
 }

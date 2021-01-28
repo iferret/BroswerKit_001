@@ -28,6 +28,10 @@ protocol BKMenuViewControllerDelegate: NSObjectProtocol {
     ///   - menuViewController: BKMenuViewController
     ///   - sender: BKTheme
     func menuViewController(_ menuViewController: BKMenuViewController, themeActionHandle sender: BKTheme)
+    
+    /// 当前主题
+    /// - Parameter menuViewController: BKMenuViewController
+    func currentTheme(menuViewController: BKMenuViewController) -> BKTheme
 }
 
 // MARK: - BKMenuViewController
@@ -203,4 +207,10 @@ extension BKMenuViewController: BKMenuToolBarDelegate {
     }
     
     
+    /// 获取当前主题
+    /// - Parameter menuToolBar: BKMenuToolBar
+    /// - Returns: BKTheme
+    internal func currentTheme(menuToolBar: BKMenuToolBar) -> BKTheme {
+        return delegate?.currentTheme(menuViewController: self) ?? .light
+    }
 }

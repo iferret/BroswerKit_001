@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 /// BKTheme
-enum BKTheme: Int {
+enum BKTheme: Int, CaseIterable {
     case light = 101
     case soft
     case girl

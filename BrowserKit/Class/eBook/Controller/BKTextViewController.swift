@@ -77,6 +77,10 @@ public class BKTextViewController: UIViewController {
         }
     }
     
+    /// deinit
+    deinit {
+        print("BKTextViewController object has been destoryed ...")
+    }
 }
 
 // MARK: - 自定义
@@ -132,12 +136,17 @@ extension BKTextViewController: BKMenuViewControllerDelegate {
             controller.view.hub.set(backgroundColor: sender.colors.backgroundColor, animated: true)
             controller.add(attributes: [.foregroundColor: sender.colors.textColor], animated: true)
         }
-        UserDefaults.current.hub.set(sender.colors.backgroundColor, forKey: .backgroundColor)
-        UserDefaults.current.hub.set(sender.colors.textColor, forKey: .textColor)
+        UserDefaults.current.hub.set(theme: sender, defaultKey: .theme)
         UserDefaults.current.hub.synchronize()
     }
     
-}
+    /// BKTheme
+    /// - Parameter menuViewController: BKMenuViewController
+    /// - Returns: BKTheme
+    internal func currentTheme(menuViewController: BKMenuViewController) -> BKTheme {
+        return UserDefaults.current.hub.theme(forKey: .theme) ?? .light
+    }
+ }
 
 // MARK: - BKPageViewControllerDelegate
 extension BKTextViewController: BKPageViewControllerDelegate {

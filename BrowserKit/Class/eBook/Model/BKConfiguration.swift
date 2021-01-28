@@ -18,27 +18,19 @@ public class BKConfiguration: NSObject {
     
     /// 文本颜色
     public var textColor: UIColor {
-        get { UserDefaults.current.hub.color(forKey: .textColor) ?? .darkGray }
-        set {
-            UserDefaults.current.hub.set(newValue, forKey: .textColor)
-            UserDefaults.current.hub.synchronize()
-        }
+        return (UserDefaults.current.hub.theme(forKey: .theme) ?? .light).colors.textColor
     }
     
     /// 背景色
     public var backgroundColor: UIColor {
-        get { UserDefaults.current.hub.color(forKey: .backgroundColor) ?? .lightGray }
-        set {
-            UserDefaults.current.hub.set(newValue, forKey: .backgroundColor)
-            UserDefaults.current.hub.synchronize()
-        }
+        return (UserDefaults.current.hub.theme(forKey: .theme) ?? .light).colors.backgroundColor
     }
     
     /// 文本字体
     public var textFont: UIFont {
         get { UserDefaults.current.hub.font(forKey: .textFont) ?? .theme(ofSize: 18.0, weight: .regular)}
         set {
-            UserDefaults.current.hub.set(newValue, forKey: .textFont)
+            UserDefaults.current.hub.set(font: newValue, forKey: .textFont)
             UserDefaults.current.hub.synchronize()
         }
     }
