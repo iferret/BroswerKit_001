@@ -12,8 +12,8 @@ extension Chapter {
     
     /// Chapter.Snapshot
     internal var snapshot: Snapshot {
-        let pages = self.pages.map { $0.snapshot }
-        return .init(uniqueID: uniqueID, title: title, contents: contents, modified: modified, sortIndex: sortIndex, pages: pages)
+        let pages = self.pages.map { $0.snapshot }.sorted(by: { $0.index < $1.index })
+        return .init(uniqueID: uniqueID, title: title, text: text, pages: pages, modified: modified, index: index)
     }
 }
 
@@ -33,9 +33,9 @@ extension Chapter {
         let object = Chapter.init(context: context)
         object.uniqueID = snapshot.uniqueID
         object.title = snapshot.title
-        object.contents = snapshot.contents
+        object.text = snapshot.text
         object.modified = snapshot.modified
-        object.sortIndex = snapshot.sortIndex
+        object.index = snapshot.index
         object.pages = []
         return object
     }

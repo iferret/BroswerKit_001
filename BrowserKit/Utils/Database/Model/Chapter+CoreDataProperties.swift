@@ -18,8 +18,8 @@ extension Chapter {
     
     @NSManaged public var uniqueID: String
     @NSManaged public var title: String
-    @NSManaged public var contents: String
-    @NSManaged public var sortIndex: Int64
+    @NSManaged public var text: String
+    @NSManaged public var index: Int64
     @NSManaged public var modified: Date
     @NSManaged public var pages: Set<Page>
     @NSManaged public var book: Book

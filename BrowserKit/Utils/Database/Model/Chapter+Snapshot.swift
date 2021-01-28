@@ -11,13 +11,31 @@ import UIKit
 extension Chapter {
     
     /// Chapter.Snapshot
-    internal struct Snapshot {
+    internal class Snapshot: NSObject {
         internal let uniqueID: String
         internal let title: String
-        internal let contents: String
+        internal let text: String
+        internal private(set) var pages: Array<Page.Snapshot>
         internal let modified: Date
-        internal let sortIndex: Int64
-        internal let pages: Array<Page.Snapshot>
+        internal let index: Int64
+        
+        /// 构建
+        /// - Parameters:
+        ///   - uniqueID: String
+        ///   - title: String
+        ///   - text: String
+        ///   - pages: [Page.Snapshot]
+        ///   - modified: Date
+        ///   - index: Int64
+        internal init(uniqueID: String, title: String, text: String, pages: [Page.Snapshot], modified: Date, index: Int64) {
+            self.uniqueID = uniqueID
+            self.title = title
+            self.text = text
+            self.pages = pages
+            self.modified = modified
+            self.index = index
+            super.init()
+        }
     }
 }
 
@@ -33,7 +51,7 @@ extension Chapter.Snapshot {
     internal func pagination(with size: CGSize, attributes: [NSAttributedString.Key: Any]) -> [Page.Snapshot] {
         
         let layoutManager: NSLayoutManager = .init()
-        let textStore: NSTextStorage = .init(string: contents, attributes: attributes)
+        let textStore: NSTextStorage = .init(string: text, attributes: attributes)
         textStore.addLayoutManager(layoutManager)
         
         var offset: Int64 = 0
@@ -48,7 +66,7 @@ extension Chapter.Snapshot {
             } else {
                 let text = textStore.attributedSubstring(from: range).string
                 let uniqueID = text.hub.md5
-                let snapshot: Page.Snapshot = .init(uniqueID: uniqueID, content: text, chapterIndex: sortIndex , sortIndex: offset)
+                let snapshot: Page.Snapshot = .init(uniqueID: uniqueID, text: text, chapterIndex: index , index: offset)
                 snapshots.append(snapshot)
                 offset += 1
             }

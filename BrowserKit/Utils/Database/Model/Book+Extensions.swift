@@ -12,8 +12,8 @@ extension Book {
     
     /// Book.Snapshot
     internal var snapshot: Snapshot {
-        let contents = self.contents.map { $0.snapshot }.sorted(by: { $0.sortIndex < $1.sortIndex })
-        return .init(uniqueID: uniqueID, creation: creation, title: title, contents: contents)
+        let chapters = self.chapters.map { $0.snapshot }.sorted(by: { $0.index < $1.index })
+        return .init(uniqueID: uniqueID, title: title, chapters: chapters, creation: creation)
     }
 }
 
@@ -73,7 +73,7 @@ extension Book {
                 let title = (txt as NSString).substring(with: element.range)
                 let contents = (txt as NSString).substring(with: .init(location: location, length: length))
                 let md5 = contents.hub.md5
-                return .init(uniqueID: md5, title: title, contents: contents, modified: .init(), sortIndex: Int64(offset), pages: [])
+                return .init(uniqueID: md5, title: title, text: contents, pages: [], modified: .init(), index: Int64(offset))
             }
         } else { // 按照字数拆分
             let length = 10000
@@ -91,7 +91,7 @@ extension Book {
                     txt = String.init(txt.dropFirst(result.range.location + result.range.length))
                 }
                 let md5 = contents.hub.md5
-                chapters.append(.init(uniqueID: md5, title: title, contents: contents, modified: .init(), sortIndex: offset, pages: []))
+                chapters.append(.init(uniqueID: md5, title: title, text: contents, pages: [], modified: .init(), index: offset))
                 offset += 1
             }
             return chapters

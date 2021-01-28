@@ -65,15 +65,15 @@ public class BKTextViewController: UIViewController {
         
         do {
             let db = try Database.current()
-            let object = try Book.insert(with: fileUrl, inContext: db.viewContext)
+            try Book.insert(with: fileUrl, inContext: db.viewContext)
             try db.viewContext.hub.saveAndWait()
             
 //            guard let page = object.snapshot.contents.first?.pagination(with: view.bounds.size.hub.inset(by:  configuration.safeAreaInsets),
 //                                                                      attributes: configuration.attributes)[2]else { return }
             
-            let safeArea = view.bounds.size.hub.inset(by:  configuration.safeAreaInsets)
-            var snapshot = object.snapshot
-            let page = try snapshot.page(at: .init(item: 0, section: 0), safeArea: safeArea, attributes: configuration.attributes)
+            let safeArea = view.bounds.size.hub.inset(by: configuration.safeAreaInsets)
+            let object: Book = try db.viewContext.hub.fetchAny()
+            let page = try object.snapshot.page(at: .init(item: 0, section: 0), safeArea: safeArea, attributes: configuration.attributes)
             
             let controller: BKContentViewController = .init(with: page, configuration: configuration)
             pageController.setViewControllers([controller], direction: .forward, animated: false)

@@ -39,7 +39,7 @@ class BKContentViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         self.additionalSafeAreaInsets = .init(top: 0.0, left: configuration.safeAreaInsets.left, bottom: 0.0, right: configuration.safeAreaInsets.right)
         label.attributedText = page.attributed(with: configuration.attributes)
-        print(page.content)
+        print(page.text)
     }
     
     /// 构建

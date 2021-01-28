@@ -16,9 +16,9 @@ extension Page {
         return NSFetchRequest<Page>(entityName: "Page")
     }
 
-    @NSManaged public var content: String
-    @NSManaged public var sortIndex: Int64
     @NSManaged public var uniqueID: String
+    @NSManaged public var text: String
+    @NSManaged public var index: Int64
     @NSManaged public var chapter: Chapter
 
 }

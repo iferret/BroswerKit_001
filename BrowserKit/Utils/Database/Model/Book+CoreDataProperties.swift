@@ -2,7 +2,7 @@
 //  Book+CoreDataProperties.swift
 //  BrowserKit
 //
-//  Created by tramp on 2021/1/24.
+//  Created by tramp on 2021/1/28.
 //
 //
 
@@ -15,27 +15,27 @@ extension Book {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Book> {
         return NSFetchRequest<Book>(entityName: "Book")
     }
-    
-    @NSManaged public var uniqueID: String
-    @NSManaged public var title: String
-    @NSManaged public var contents: Set<Chapter>
+
     @NSManaged public var creation: Date
+    @NSManaged public var title: String
+    @NSManaged public var uniqueID: String
+    @NSManaged public var chapters: Set<Chapter>
 
 }
 
-// MARK: Generated accessors for contents
+// MARK: Generated accessors for chapters
 extension Book {
 
-    @objc(addContentsObject:)
-    @NSManaged public func addToContents(_ value: Chapter)
+    @objc(addChaptersObject:)
+    @NSManaged public func addToChapters(_ value: Chapter)
 
-    @objc(removeContentsObject:)
-    @NSManaged public func removeFromContents(_ value: Chapter)
+    @objc(removeChaptersObject:)
+    @NSManaged public func removeFromChapters(_ value: Chapter)
 
-    @objc(addContents:)
-    @NSManaged public func addToContents(_ values: Set<Chapter>)
+    @objc(addChapters:)
+    @NSManaged public func addToChapters(_ values: NSSet)
 
-    @objc(removeContents:)
-    @NSManaged public func removeFromContents(_ values: Set<Chapter>)
+    @objc(removeChapters:)
+    @NSManaged public func removeFromChapters(_ values: NSSet)
 
 }

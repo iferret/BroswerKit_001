@@ -12,9 +12,9 @@ extension Page {
     /// Page.Snapshot
     internal struct Snapshot {
         internal let uniqueID: String
-        internal let content: String
+        internal let text: String
         internal let chapterIndex: Int64
-        internal let sortIndex: Int64
+        internal let index: Int64
     }
 }
 
@@ -25,6 +25,6 @@ extension Page.Snapshot {
     /// - Parameter attributes: [NSAttributedString.Key: Any]
     /// - Returns: NSAttributedString
     internal func attributed(with attributes: [NSAttributedString.Key: Any]) -> NSAttributedString {
-        return .init(string: content, attributes:  attributes)
+        return .init(string: text, attributes:  attributes)
     }
 }

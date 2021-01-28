@@ -12,7 +12,7 @@ extension Page {
     
     /// Page.Snapshot
     internal var snapshot: Snapshot {
-        return .init(uniqueID: uniqueID, content: content, chapterIndex: chapter.sortIndex, sortIndex: sortIndex)
+        return .init(uniqueID: uniqueID, text: text, chapterIndex: chapter.index, index: index)
     }
 }
 
@@ -30,8 +30,8 @@ extension Page {
         } else {
             let object: Page = .init(context: context)
             object.uniqueID = snapshot.uniqueID
-            object.sortIndex = snapshot.sortIndex
-            object.content = snapshot.content
+            object.index = snapshot.index
+            object.text = snapshot.text
             return object
         }
     }
