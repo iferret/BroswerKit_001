@@ -57,7 +57,7 @@ extension Book {
     /// 获取文章章节
     /// - Parameter txt: String
     /// - Returns: [Chapter.Snapshot]
-    private static func chapters(for txt: String) throws -> [Chapter.Snapshot] {
+    internal static func chapters(for txt: String) throws -> [Chapter.Snapshot] {
         let pattern = "第[ ]*[0-9一二三四五六七八九十百千]*[ ]*[章回].*"
         let regExp = try NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options.caseInsensitive)
         let results = regExp.matches(in: txt, options: .reportCompletion, range: .init(location: 0, length: txt.count))

@@ -24,7 +24,6 @@
 		C77492E925BBEC5A00068A2A /* BrowserKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C77492B825BBEAF500068A2A /* BrowserKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C77492FE25BBEE0100068A2A /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77492FD25BBEE0100068A2A /* Database.swift */; };
 		C7807FD025C117AD00297766 /* BKConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7807FCF25C117AD00297766 /* BKConfiguration.swift */; };
-		C7807FD325C11F5000297766 /* BKIndexPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7807FD225C11F5000297766 /* BKIndexPath.swift */; };
 		C7807FD625C1267300297766 /* BKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7807FD525C1267300297766 /* BKLabel.swift */; };
 		C7807FD925C12FA500297766 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7807FD825C12FA500297766 /* UIApplication+Extensions.swift */; };
 		C7807FDC25C137A200297766 /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7807FDB25C137A200297766 /* CGSize+Extensions.swift */; };
@@ -115,7 +114,6 @@
 		C77492E225BBEC4100068A2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C77492FD25BBEE0100068A2A /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		C7807FCF25C117AD00297766 /* BKConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKConfiguration.swift; sourceTree = "<group>"; };
-		C7807FD225C11F5000297766 /* BKIndexPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKIndexPath.swift; sourceTree = "<group>"; };
 		C7807FD525C1267300297766 /* BKLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKLabel.swift; sourceTree = "<group>"; };
 		C7807FD825C12FA500297766 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		C7807FDB25C137A200297766 /* CGSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
@@ -345,7 +343,6 @@
 			isa = PBXGroup;
 			children = (
 				C7807FCF25C117AD00297766 /* BKConfiguration.swift */,
-				C7807FD225C11F5000297766 /* BKIndexPath.swift */,
 				C780802C25C1787700297766 /* BKTheme.swift */,
 			);
 			path = Model;
@@ -602,7 +599,6 @@
 				C7807FD025C117AD00297766 /* BKConfiguration.swift in Sources */,
 				C788A59D25BBF7DE00767B4A /* Compatible.swift in Sources */,
 				C780802925C174E600297766 /* UIImage+Extensions.swift in Sources */,
-				C7807FD325C11F5000297766 /* BKIndexPath.swift in Sources */,
 				C744684025C011F40043B3E4 /* NSManagedObjectContext+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

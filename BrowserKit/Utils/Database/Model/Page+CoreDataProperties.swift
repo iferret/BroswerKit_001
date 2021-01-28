@@ -2,7 +2,7 @@
 //  Page+CoreDataProperties.swift
 //  BrowserKit
 //
-//  Created by tramp on 2021/1/24.
+//  Created by tramp on 2021/1/28.
 //
 //
 
@@ -18,5 +18,7 @@ extension Page {
 
     @NSManaged public var content: String
     @NSManaged public var sortIndex: Int64
-    
+    @NSManaged public var uniqueID: String
+    @NSManaged public var chapter: Chapter
+
 }

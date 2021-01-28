@@ -11,7 +11,9 @@ extension Page {
     
     /// Page.Snapshot
     internal struct Snapshot {
+        internal let uniqueID: String
         internal let content: String
+        internal let chapterIndex: Int64
         internal let sortIndex: Int64
     }
 }

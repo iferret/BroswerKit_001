@@ -47,7 +47,8 @@ extension Chapter.Snapshot {
                 break
             } else {
                 let text = textStore.attributedSubstring(from: range).string
-                let snapshot: Page.Snapshot = .init(content: text, sortIndex: offset)
+                let uniqueID = text.hub.md5
+                let snapshot: Page.Snapshot = .init(uniqueID: uniqueID, content: text, chapterIndex: sortIndex , sortIndex: offset)
                 snapshots.append(snapshot)
                 offset += 1
             }

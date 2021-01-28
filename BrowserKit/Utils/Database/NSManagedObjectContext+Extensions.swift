@@ -8,6 +8,18 @@
 import Foundation
 import CoreData
 
+extension NSManagedObjectContext {
+    
+    /// 构建
+    /// - Parameters:
+    ///   - concurrencyType: NSManagedObjectContextConcurrencyType
+    ///   - parent: NSManagedObjectContext
+    internal convenience init(concurrencyType: NSManagedObjectContextConcurrencyType, parent: NSManagedObjectContext) {
+        self.init(concurrencyType: concurrencyType)
+        self.parent = parent
+    }
+}
+
 extension NSManagedObjectContext: Compatible {}
 extension CompatibleWrapper where Base: NSManagedObjectContext {
     
@@ -49,6 +61,14 @@ extension CompatibleWrapper where Base: NSManagedObjectContext {
         guard results.isEmpty == false else { throw BKError.customized("未获取到相关数据") }
         guard let result = try base.fetch(req).first as? T else { throw BKError.customized("范型转换错误") }
         return result
+    }
+    
+    /// delete objects
+    /// - Parameter objects: [NSManagedObject]
+    internal func delete(objects: [NSManagedObject]) {
+        objects.forEach {
+            base.delete($0)
+        }
     }
 }
 
