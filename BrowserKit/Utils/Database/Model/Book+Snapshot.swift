@@ -17,6 +17,7 @@ extension Book {
         internal let title: String
         internal private(set) var chapters: Array<Chapter.Snapshot>
         internal let creation: Date
+        internal let indexPath: NSIndexPath
         
         /// 构建
         /// - Parameters:
@@ -24,11 +25,12 @@ extension Book {
         ///   - title: String
         ///   - chapters: Array<Chapter.Snapshot>
         ///   - creation: Date
-        internal init(uniqueID: String, title: String, chapters: Array<Chapter.Snapshot>, creation: Date) {
+        internal init(uniqueID: String, title: String, chapters: Array<Chapter.Snapshot>, creation: Date, indexPath: NSIndexPath) {
             self.uniqueID = uniqueID
             self.title = title
             self.chapters = chapters
             self.creation = creation
+            self.indexPath = indexPath
             super.init()
         }
     }

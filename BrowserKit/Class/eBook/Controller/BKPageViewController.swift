@@ -9,7 +9,7 @@ import UIKit
 
 // MARK: - BKPageViewControllerDelegate
 protocol BKPageViewControllerDelegate: NSObjectProtocol {
-    
+
     /// willTransitionTo
     /// - Parameters:
     ///   - pageViewController: BKPageViewController
@@ -51,6 +51,22 @@ extension BKPageViewControllerDelegate {
 // MARK: - BKPageViewControllerDataSource
 protocol BKPageViewControllerDataSource: NSObjectProtocol {
     
+//    /// numberOfSections
+//    /// - Parameter pageViewController: BKPageViewController
+//    func numberOfSections(in pageViewController: BKPageViewController) -> Int
+//    
+//    /// numberOfItemsInSection
+//    /// - Parameters:
+//    ///   - pageViewController: BKPageViewController
+//    ///   - section: Int
+//    func pageViewController(_ pageViewController: BKPageViewController, numberOfItemsInSection section: Int) -> Int
+//    
+//    /// controllerForItemAt
+//    /// - Parameters:
+//    ///   - pageViewController: BKPageViewController
+//    ///   - indexPath: UIViewController
+//    func pageViewController(_ pageViewController: BKPageViewController, controllerForItemAt indexPath: IndexPath) -> UIViewController
+    
     /// viewControllerBefore
     /// - Parameters:
     ///   - pageViewController: BKPageViewController
@@ -84,6 +100,8 @@ class BKPageViewController: UIViewController {
     typealias SpineLocation = UIPageViewController.SpineLocation
     typealias OptionsKey = UIPageViewController.OptionsKey
     typealias NavigationDirection = UIPageViewController.NavigationDirection
+
+ 
     
     // MARK: - 公开属性
     

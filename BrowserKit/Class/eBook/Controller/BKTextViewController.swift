@@ -65,7 +65,8 @@ public class BKTextViewController: UIViewController {
         
         do {
             let db = try Database.current()
-            try Book.insert(with: fileUrl, inContext: db.viewContext)
+            let obj = try Book.insert(with: fileUrl, inContext: db.viewContext)
+            obj.indexPath = .init(item: 2, section: 4)
             try db.viewContext.hub.saveAndWait()
             
 //            guard let page = object.snapshot.contents.first?.pagination(with: view.bounds.size.hub.inset(by:  configuration.safeAreaInsets),

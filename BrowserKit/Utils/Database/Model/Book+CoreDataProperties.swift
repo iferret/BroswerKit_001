@@ -2,7 +2,7 @@
 //  Book+CoreDataProperties.swift
 //  BrowserKit
 //
-//  Created by tramp on 2021/1/28.
+//  Created by tramp on 2021/1/29.
 //
 //
 
@@ -19,6 +19,7 @@ extension Book {
     @NSManaged public var creation: Date
     @NSManaged public var title: String
     @NSManaged public var uniqueID: String
+    @NSManaged public var indexPath: NSIndexPath
     @NSManaged public var chapters: Set<Chapter>
 
 }
@@ -33,9 +34,9 @@ extension Book {
     @NSManaged public func removeFromChapters(_ value: Chapter)
 
     @objc(addChapters:)
-    @NSManaged public func addToChapters(_ values: NSSet)
+    @NSManaged public func addToChapters(_ values: Set<Chapter>)
 
     @objc(removeChapters:)
-    @NSManaged public func removeFromChapters(_ values: NSSet)
+    @NSManaged public func removeFromChapters(_ values: Set<Chapter>)
 
 }

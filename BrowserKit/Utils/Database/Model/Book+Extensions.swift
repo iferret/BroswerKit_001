@@ -13,7 +13,7 @@ extension Book {
     /// Book.Snapshot
     internal var snapshot: Snapshot {
         let chapters = self.chapters.map { $0.snapshot }.sorted(by: { $0.index < $1.index })
-        return .init(uniqueID: uniqueID, title: title, chapters: chapters, creation: creation)
+        return .init(uniqueID: uniqueID, title: title, chapters: chapters, creation: creation, indexPath: indexPath)
     }
 }
 
@@ -35,7 +35,7 @@ extension Book {
         object.uniqueID = uniqueID
         object.title = fileUrl.lastPathComponent
         object.creation = .init()
-        
+        object.indexPath = .init(item: 0, section: 0)
         let encoding = try FileManager.default.hub.encoding(for: fileUrl)
         let contents = try String.init(contentsOf: fileUrl, encoding: encoding)
         let snapshots = try self.chapters(for: contents)

@@ -47,6 +47,8 @@ class Database {
         container.loadPersistentStores { (_, error) in
             _error = error
         }
+        // 注册
+        NSIndexPathTransformer.register()
         guard let error = _error else { return }
         throw error
     }
