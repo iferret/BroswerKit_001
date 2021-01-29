@@ -51,9 +51,10 @@ extension BKPageViewControllerDelegate {
 // MARK: - BKPageViewControllerDataSource
 protocol BKPageViewControllerDataSource: NSObjectProtocol {
     
+//
 //    /// numberOfSections
 //    /// - Parameter pageViewController: BKPageViewController
-//    func numberOfSections(in pageViewController: BKPageViewController) -> Int
+//    func numberOfSections(for pageViewController: BKPageViewController) -> Int
 //    
 //    /// numberOfItemsInSection
 //    /// - Parameters:
@@ -66,6 +67,11 @@ protocol BKPageViewControllerDataSource: NSObjectProtocol {
 //    ///   - pageViewController: BKPageViewController
 //    ///   - indexPath: UIViewController
 //    func pageViewController(_ pageViewController: BKPageViewController, controllerForItemAt indexPath: IndexPath) -> UIViewController
+//    
+//    /// currentIndexPath
+//    /// - Parameter pageViewController: BKPageViewController
+//    func currentIndexPath(for pageViewController: BKPageViewController) -> IndexPath
+    
     
     /// viewControllerBefore
     /// - Parameters:

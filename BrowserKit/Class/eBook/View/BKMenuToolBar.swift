@@ -104,13 +104,15 @@ extension BKMenuToolBar {
         /// update select theme
         if let theme = delegate?.currentTheme(menuToolBar: self) {
             themeBar.items?.forEach({ (item) in
-                if item.tag == theme.rawValue {
-                    item.customView?.layer.borderColor = UIColor.orange.cgColor
-                    item.customView?.layer.shadowColor = UIColor.orange.cgColor
-                } else {
-                    guard item.customView != nil else { return }
-                    item.customView?.layer.borderColor = UIColor.white.cgColor
-                    item.customView?.layer.shadowColor = UIColor.white.cgColor
+                guard let customView = item.customView else { return }
+                UIView.animate(withDuration: 0.25) {
+                    if item.tag == theme.rawValue {
+                        customView.layer.borderColor = UIColor.orange.cgColor
+                        customView.layer.shadowColor = UIColor.orange.cgColor
+                    } else {
+                        customView.layer.borderColor = customView.backgroundColor?.cgColor
+                        customView.layer.shadowColor = customView.backgroundColor?.cgColor
+                    }
                 }
             })
         }
