@@ -70,6 +70,12 @@ extension CompatibleWrapper where Base: NSManagedObjectContext {
             base.delete($0)
         }
     }
+    
+    /// delet object
+    /// - Parameter object: NSManagedObject
+    internal func delete(_ object: NSManagedObject) {
+        base.delete(object)
+    }
 }
 
 
